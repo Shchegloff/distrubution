@@ -13,7 +13,7 @@ class Students(Model):
     id = PrimaryKeyField(null=False)
     fio_nm = CharField(max_length=500)
     school_nm = CharField(max_length=100)
-    corpse_no = IntegerField()
+    house_no = IntegerField()
 
     class Meta:
         database = db
@@ -25,19 +25,19 @@ Students.create_table()
 
 # Исходные данные для блочной загрузки
 data = [
-    {'fio_nm': 'Абдулагапова Р.Р.', 'school_nm': 'Школа региональных и международных исследований', 'corpse_no': 1},
-    {'fio_nm': 'Базыльников О.С.', 'school_nm': 'Школа региональных и международных исследований', 'corpse_no': 2},
-    {'fio_nm': 'Барышев А.Н.', 'school_nm': 'Школа биомедицины', 'corpse_no': 7},
-    {'fio_nm': 'Батог П.А.', 'school_nm': 'Школа гуманитарных наук Корпус', 'corpse_no': 7},
-    {'fio_nm': 'Белашко А.С.', 'school_nm': 'Инженерная школа', 'corpse_no': 3},
-    {'fio_nm': 'Беленец Н.Ю.', 'school_nm': 'Школа экономики и менеджмента', 'corpse_no': 5},
-    {'fio_nm': 'Белов А.А.', 'school_nm': 'Школа естественных наук', 'corpse_no': 1},
-    {'fio_nm': 'Белоголовцева Е.А.', 'school_nm': 'Юридическая школа', 'corpse_no': 2},
-    {'fio_nm': 'Белоусова А.О.', 'school_nm': 'Школа экономики и менеджмента', 'corpse_no': 4}
+    {'fio_nm': 'Абдулагапова Р.Р.', 'school_nm': 'Школа региональных и международных исследований', 'house_no': 1},
+    {'fio_nm': 'Базыльников О.С.', 'school_nm': 'Школа региональных и международных исследований', 'house_no': 2},
+    {'fio_nm': 'Барышев А.Н.', 'school_nm': 'Школа биомедицины', 'house_no': 7},
+    {'fio_nm': 'Батог П.А.', 'school_nm': 'Школа гуманитарных наук', 'house_no': 7},
+    {'fio_nm': 'Белашко А.С.', 'school_nm': 'Инженерная школа', 'house_no': 3},
+    {'fio_nm': 'Беленец Н.Ю.', 'school_nm': 'Школа экономики и менеджмента', 'house_no': 5},
+    {'fio_nm': 'Белов А.А.', 'school_nm': 'Школа естественных наук', 'house_no': 1},
+    {'fio_nm': 'Белоголовцева Е.А.', 'school_nm': 'Юридическая школа', 'house_no': 2},
+    {'fio_nm': 'Белоусова А.О.', 'school_nm': 'Школа экономики и менеджмента', 'house_no': 4}
 ]
 
 # Добавление одной записи
-st = Students(fio_nm='Иванова М.А.', school_nm='Школа биомедицины', corpse_no=11)
+st = Students(fio_nm='Иванова М.А.', school_nm='Школа биомедицины', house_no=11)
 st.save()
 
 # Блочное добавление данных (многих)
